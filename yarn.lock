@@ -611,6 +611,11 @@
   resolved "https://registry.yarnpkg.com/@telegram-apps/types/-/types-2.0.0.tgz#5e4eb0e32b6bdeacf08abc4ebfbeef6c4228219f"
   integrity sha512-yF499FJK82a2IDNDAQdrmVH3sgFZl/QFNdVZKgWpgtunIVJ1fres5wi9+4aUBRVIdQwZOZZqB/AOvYYuYXsq3Q==
 
+"@telegram-web-app/react@^0.0.1-beta.1":
+  version "0.0.1-beta.1"
+  resolved "https://registry.yarnpkg.com/@telegram-web-app/react/-/react-0.0.1-beta.1.tgz#cf8ed00c5569fe5cb4f94b0b42459584968903be"
+  integrity sha512-PNBEdNMxs28Pmx0ROazRuf6ZrZRaiNHp6PqgX0IRAew63Dm+KmtGtGNw4x/rxTUjZlsGTfZuvKBSdWIRGCnbKg==
+
 "@types/babel__core@^7.20.5":
   version "7.20.5"
   resolved "https://registry.yarnpkg.com/@types/babel__core/-/babel__core-7.20.5.tgz#3df15f27ba85319caa07ba08d0721889bb39c017"
