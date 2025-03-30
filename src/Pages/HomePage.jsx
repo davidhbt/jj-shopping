@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Test from './Test'
+import TelegramUserSDK from './TelegramUserSDK'
 
 function HomePage() {
   const [transactionNo, setTransactionNo] = useState()

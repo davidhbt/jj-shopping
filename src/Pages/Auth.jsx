@@ -25,14 +25,31 @@ function Auth() {
             Authentication  <br /> <span style={{color: 'var(--color1)'}}></span>
             
           </h1>
-          <p className='AuthHP'>Who are you?</p>
+          {/* <p className='AuthHP'>Who are you?</p> */}
           
         </div>
         <div className="AuthContent">
-          <div className="AuthCLogin">
+          {/* <div className="AuthCLogin">
             <img src={Google_icon} alt="" className="AuthCImg" />
             <h1 className="AuthCH1">Sign in with  <span style={{color: 'var(--color1)'}}>Google</span></h1>
-          </div>
+          </div> */}
+          <form className='AuthCForm'>
+            <div className="AuthCFInputContainer">
+              <label className='AuthCFICLabel'>
+                Email
+              </label>
+              <input type="email" placeholder='Email' className="AuthCFIInput" />
+            </div>
+            <div className="AuthCFInputContainer">
+              <label className='AuthCFICLabel'>
+                Password
+              </label>
+              <input type="email" placeholder='Password' className="AuthCFIInput" />
+              <p className='signinoption'>Or create a account</p>
+            </div>
+
+            <input type="submit" value="Login" />
+          </form>
         </div>
       </div>
     </div>
