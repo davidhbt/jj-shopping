@@ -3,32 +3,24 @@ import Google_icon from '../assets/Google-icon.png'
 import User_icon from '../assets/WebP/User.webp'
 import './Auth.css'
 import { Auth_cfg } from '../Config/Firebase'
-import { getAuth, signInWithRedirect, GoogleAuthProvider, getRedirectResult } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
 function Auth() {
-  const [user, setUser] = useState();
-
-  const handleGoogleSignIn = () => {
+  const [user, setUser] = useState()
+  const handleGoogleSignIn = async () => {
     const provider = new GoogleAuthProvider();
-    signInWithRedirect(Auth_cfg, provider); // Use redirect instead of popup
+    try {
+      const result = await signInWithPopup(Auth_cfg, provider); // Use Auth_cfg directly
+      const user = result.user;
+      console.log("User signed in:", user);
+    } catch (error) {
+      console.error("Error during sign-in:", error);
+    }
   };
 
   useEffect(() => {
-    const fetchRedirectResult = async () => {
-      try {
-        const result = await getRedirectResult(Auth_cfg);
-        if (result) {
-          const user = result.user;
-          console.log("User signed in:", user);
-          setUser(user.displayName);
-        }
-      } catch (error) {
-        console.error("Error during redirect sign-in:", error);
-      }
-    };
-
-    fetchRedirectResult();
-  }, []);
+    setUser(Auth_cfg?.currentUser?.displayName)
+  }, [])
 
   return (
     <div className='page'>
