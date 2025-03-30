@@ -1,16 +1,28 @@
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+import { getAuth, browserLocalPersistence, setPersistence } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBIBNDlxUxungu40NhGfyNP0Ra4ms5SS3w",
-  authDomain: "jj-shopping.firebaseapp.com",
-  projectId: "jj-shopping",
-  storageBucket: "jj-shopping.firebasestorage.app",
-  messagingSenderId: "32431862975",
-  appId: "1:32431862975:web:830a1636c8d646375bc20a",
-  measurementId: "G-73YG68PTQ5"
+  apiKey: "YOUR_API_KEY", // Replace with your Firebase API key
+  authDomain: "YOUR_AUTH_DOMAIN", // Replace with your Firebase Auth domain
+  projectId: "YOUR_PROJECT_ID", // Replace with your Firebase project ID
+  storageBucket: "YOUR_STORAGE_BUCKET", // Replace with your Firebase storage bucket
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID", // Replace with your Firebase messaging sender ID
+  appId: "YOUR_APP_ID", // Replace with your Firebase app ID
 };
 
-
+// Initialize Firebase App
 const app = initializeApp(firebaseConfig);
-export const Auth_cfg = getAuth(app)
+
+// Initialize Auth instance
+const auth = getAuth(app);
+
+// Set persistence to localStorage
+setPersistence(auth, browserLocalPersistence)
+  .then(() => {
+    console.log("Persistence set to localStorage");
+  })
+  .catch((error) => {
+    console.error("Error setting persistence:", error);
+  });
+
+export const Auth_cfg = auth;
