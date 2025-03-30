@@ -4,8 +4,8 @@
   display: flex;
   flex-direction: column;
   padding-block: 20px;
-  gap: 50px;
-  /* justify-content: space-between; */
+  gap: 20px;
+  justify-content: center;
   /* align-items: center; */
 }
 
@@ -53,7 +53,8 @@
 
 .AuthCFInputContainer label{
     opacity: 0.5;
-    display: none;
+    font-size: 13px;
+    /* display: none; */
 }
 .AuthCFInputContainer input {
     width: 100%;
@@ -63,7 +64,7 @@
     padding: 10px;
     border-radius: 10px;
     /* background-color: rgba(255, 255, 255, 0.07); */
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* border: 1px solid rgba(73, 73, 73, 0.3); */
     color: white;
     outline: none;
     transition: all 0.3s ease-in-out;
@@ -82,7 +83,7 @@
 }
 
 .AuthCFInputContainer input::placeholder {
-    color: rgba(255, 255, 255, 0.7);
+    /* color: black; */
     font-style: italic;
     font-size: 15px;
 }
@@ -91,8 +92,11 @@
 }
 
 .AuthCFInputContainer input::placeholder{
-    color: white;
+    color: rgb(255, 255, 255);
     /* padding: 0; */
+    opacity: 0.5;
+    font-size: 14px;
+    font-weight: 300;
 }
 
 

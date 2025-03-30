@@ -33,19 +33,21 @@ function Auth() {
             <img src={Google_icon} alt="" className="AuthCImg" />
             <h1 className="AuthCH1">Sign in with  <span style={{color: 'var(--color1)'}}>Google</span></h1>
           </div> */}
-          <form className='AuthCForm'>
+          <form className='AuthCForm' onSubmit={(e) => {
+            e.preventDefault()
+          }}>
             <div className="AuthCFInputContainer">
               <label className='AuthCFICLabel'>
                 Email
               </label>
-              <input type="email" placeholder='Email' className="AuthCFIInput" />
+              <input type="email" placeholder='example@gmail.com' className="AuthCFIInput" />
             </div>
             <div className="AuthCFInputContainer">
               <label className='AuthCFICLabel'>
                 Password
               </label>
-              <input type="email" placeholder='Password' className="AuthCFIInput" />
-              <p className='signinoption'>Or create a account</p>
+              <input type="email" placeholder='must be 8 characters or longer' className="AuthCFIInput" />
+              <p className='signinoption'>Or create a new account</p>
             </div>
 
             <input type="submit" value="Login" />
