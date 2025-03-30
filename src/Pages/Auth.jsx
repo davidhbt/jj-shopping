@@ -2,10 +2,12 @@ import React, { useState , useEffect} from 'react'
 import Google_icon from '../assets/Google-icon.png'
 import User_icon from '../assets/WebP/User.webp'
 import './Auth.css'
+import { MainButton, useShowPopup } from '@vkruglikov/react-telegram-web-app'
 
 
 
 function Auth() {
+  const show = useShowPopup()
   const [user, setUser] = useState()
 
     useEffect(() => {
@@ -46,11 +48,13 @@ function Auth() {
               <label className='AuthCFICLabel'>
                 Password
               </label>
-              <input type="email" placeholder='must be 8 characters or longer' className="AuthCFIInput" />
+              <input type="password" placeholder='must be 8 characters or longer' className="AuthCFIInput" />
               <p className='signinoption'>Or create a new account</p>
             </div>
 
-            <input type="submit" value="Login" />
+            <input onClick={() => {
+              show({message: 'wsg'})
+            }} type="submit" value="Login" />
           </form>
         </div>
       </div>
