@@ -1,22 +1,68 @@
-.AuthContainer{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    padding-block: 20px;
+.AuthContainer {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  padding-block: 20px;
+  gap: 50px;
+  /* justify-content: space-between; */
+  /* align-items: center; */
 }
 
-.AuthHeader{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+.AuthHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 15px;
 }
-.AuthContainer img{
-    width: 100px;
-    height: 100px;
+
+.AuthHeader img {
+  width: 100px;
+  height: 100px;
 }
-.AuthContainer h1{
-    font-size: 30px;
-    font-weight: 700;
+.AuthHeader h1 {
+  font-size: 30px;
+  font-weight: 700;
+}
+.AuthHeader p {
+  opacity: 0.5;
+}
+
+.AuthContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.AuthContent div {
+  background-color: var(--color3);
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  gap: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.AuthContent div:active {
+  animation: bounce 0.3s ease-in-out;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: scale(100%);
+  }
+  50% {
+    transform: scale(102%);
+  }
+}
+.AuthContent div img {
+  width: 35px;
+  height: 35px;
+}
+
+.AuthContent div h1 {
+  font-size: 20px;
 }
