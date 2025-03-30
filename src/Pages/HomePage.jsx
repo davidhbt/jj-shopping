@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Test from './Test'
 
 function HomePage() {
+  const [transactionNo, setTransactionNo] = useState()
   return (
     <div className='page'>
         <div className="HomePageContainer">
-            <h1>wsg</h1>
+            <input type="text"  onChange={(e) => setTransactionNo(e.target.value)}/>
+            {/* <button>check status</button> */}
+            
         </div>
     </div>
   )

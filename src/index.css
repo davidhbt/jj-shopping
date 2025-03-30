@@ -2,16 +2,20 @@
   --color1: #28C281;
   --color2: #475368;
   --color3: #374051;
+  --text-dim: #8C9097;
+  --main-font:  "Raleway", sans-serif;
+  --secondary-font:  "Work Sans", sans-serif;
 }
 
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: var(--main-font);
 }
 
 .page{
-  background-color: var(--color3);
+  background-color: var(--color2);
   color: white;
   width: 100%;
   min-height: calc(100vh - 80px);

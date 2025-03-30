@@ -3,6 +3,8 @@ import { Route, Routes } from 'react-router-dom'
 import HomePage from './Pages/HomePage'
 import NotFound from './Pages/NotFound'
 import Nav from './Components/Nav'
+import Auth from './Pages/Auth'
+import Test from './Pages/Test'
 
 
 function App() {
@@ -11,6 +13,7 @@ function App() {
     <>
     <Routes>
       <Route path='/' element={<HomePage/>} />
+      <Route path='/auth' element={<Auth/>} />
       <Route path='*' element={<NotFound/>} />
     </Routes>
     <Nav/>
