@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState , useEffect} from 'react'
 import Google_icon from '../assets/Google-icon.png'
 import User_icon from '../assets/WebP/User.webp'
 import './Auth.css'
@@ -14,6 +14,8 @@ function Auth() {
       setUser(userInfo);
     }
   }, []);
+
+  console.log(user)
   return (
     <div className='page'>
       <div className="AuthContainer">
@@ -24,6 +26,7 @@ function Auth() {
             
           </h1>
           <p className='AuthHP'>Who are you?</p>
+          
         </div>
         <div className="AuthContent">
           <div className="AuthCLogin">
