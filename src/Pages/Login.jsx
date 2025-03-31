@@ -7,18 +7,27 @@ import { Auth_cfg,  } from '../Config/Firebase'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
-import { contectP } from '../App'
+import { userState } from '../App'
+import { useNavigate } from 'react-router-dom'
 
 
-
-function Auth() {
+function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const data = useContext(contectP)
+  const navigate = useNavigate()
+  const user = useContext(userState)
 
-  console.log(data)
-  const [user, setUser] = useState()
+  useEffect(() => {
+    if(user != null){
+      toast.info("Already Logged In")
+      navigate('/')
+    }
+  })
+  
+
+  // console.log(data)
+  console.log(user)
 
 
   const handleLogin = async () =>{
@@ -67,7 +76,7 @@ function Auth() {
               <label className='AuthCFICLabel'>
                 Password
               </label>
-              <input onChange={(e) => setPassword(e.target.value)} type="password" placeholder='must be 8 characters or longer' className="AuthCFIInput" />
+              <input onChange={(e) => setPassword(e.target.value)} autoComplete='current-password' type="password" placeholder='must be 8 characters or longer' className="AuthCFIInput" />
               <Link to='/new' className='signinoption'>Or create a new account</Link>
             </div>
 
@@ -79,4 +88,4 @@ function Auth() {
   )
 }
 
-export default Auth
+export default Login

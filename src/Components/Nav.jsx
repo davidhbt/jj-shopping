@@ -66,18 +66,18 @@ function Nav() {
           </div>
           <label className="NavLinkLabel">Track</label>
         </Link>{" "}
-        <Link to='/auth' className="NavLink"
+        <Link to='/profile' className="NavLink"
         >
           <div className="NavLinkCover"
-            style={currentPath === '/auth' ? highlightcss_div : undefined}
+            style={currentPath === '/new' || currentPath === '/login'|| currentPath === '/profile' ? highlightcss_div : undefined}
 
           >
             <img
-            style={currentPath === '/auth' ? highlightcss_img : undefined}
+            style={currentPath === '/new' || currentPath === '/login'|| currentPath === '/profile' ? highlightcss_img : undefined}
              src={Profile} alt="" className="NavLinkIcon" />
           </div>
           <label className="NavLinkLabel"
-          style={currentPath === '/auth' ? highlightcss_label : undefined}
+          style={currentPath === '/new' ||currentPath ===   '/login'|| currentPath === '/profile' ? highlightcss_label : undefined}
           >Profile</label>
         </Link>
       </div>
