@@ -5,6 +5,7 @@
   --text-dim: #8C9097;
   --main-font:  "Raleway", sans-serif;
   --secondary-font:  "Work Sans", sans-serif;
+  --toastify-text-color-light: white;
 }
 
 *{

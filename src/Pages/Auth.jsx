@@ -2,6 +2,7 @@ import React, { useState , useEffect} from 'react'
 import Google_icon from '../assets/Google-icon.png'
 import User_icon from '../assets/WebP/User.webp'
 import './Auth.css'
+import { toast } from 'react-toastify'
 
 
 
@@ -50,7 +51,7 @@ function Auth() {
               <p className='signinoption'>Or create a new account</p>
             </div>
 
-            <input type="submit" value="Login"  onClick={() => alert('wsg')}/>
+            <input type="submit" value="Login"  onClick={() => toast.success('wsg')}/>
           </form>
         </div>
       </div>
