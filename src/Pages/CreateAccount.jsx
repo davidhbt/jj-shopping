@@ -6,11 +6,23 @@ import { toast } from "react-toastify";
 import { Auth_cfg } from "../Config/Firebase";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { Link } from "react-router-dom";
+import { userState } from "../App";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 function CreateAccount() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+
+  const navigate = useNavigate()
+
+  const user = useContext(userState)
+  useEffect(() => {
+    if(user != null){
+        navigate('/profile')
+    }
+  },[])
 
   const handleCreateAccount = async () => {
     toast.info()
@@ -22,6 +34,7 @@ function CreateAccount() {
         displayName: name
       })
       toast.success('Success!')
+      navigate('/profile')
       
     } catch (err) {
       // alert()

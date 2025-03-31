@@ -20,7 +20,6 @@ function Login() {
 
   useEffect(() => {
     if(user != null){
-      toast.info("Already Logged In")
       navigate('/')
     }
   })
