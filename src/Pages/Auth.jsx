@@ -28,7 +28,10 @@ function Auth() {
             
           </h1>
           {/* <p className='AuthHP'>Who are you?</p> */}
-          
+          <MainButton
+  text="CLICK ME"
+  onClick={() => console.log('Hello, I am button!')}
+/>;
         </div>
         <div className="AuthContent">
           {/* <div className="AuthCLogin">
@@ -53,7 +56,8 @@ function Auth() {
             </div>
 
             <input onClick={() => {
-              show({message: 'wsg'})
+              show({message: 'wsg'}), 
+              console.log('wsg')
             }} type="submit" value="Login" />
           </form>
         </div>
