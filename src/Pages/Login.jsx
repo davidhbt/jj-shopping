@@ -18,11 +18,11 @@ function Login() {
   const navigate = useNavigate()
   const user = useContext(userState)
 
-  useEffect(() => {
-    if(user != null){
-      navigate('/')
-    }
-  })
+  // useEffect(() => {
+  //   if(user != null){
+  //     navigate('/')
+  //   }
+  // })
   
 
   // console.log(data)
@@ -35,6 +35,7 @@ function Login() {
 
       await signInWithEmailAndPassword(Auth_cfg, email, password)
       toast.success("Logged in.")
+      navigate('/')
     }catch(err){
       // alert()
       console.log(err)

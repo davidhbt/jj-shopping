@@ -1,0 +1,91 @@
+.HomePageContainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  /* justify-content: ; */
+  align-items: center;
+  flex-direction: column;
+  /* gap: 100px; */
+}
+
+.HomePageHeading {
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 3px;
+  /* background-color: red; */
+}
+.HomePageHeading img {
+  width: 100px;
+  height: 100px;
+}
+.HomePageHeading h1 {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.HomePageHeading p {
+  font-size: 13px;
+  opacity: 0.5;
+}
+
+.HPListing {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  width: 100%;
+  max-width: 600px;
+  /* background-color: purple; */
+  align-items: center;
+}
+.HPItems,
+.HPService {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  /* background-color: green; */
+}
+
+.HPItems,
+h1,
+.HPService h1 {
+  font-size: 20px;
+}
+
+.HPItem {
+  /* max-width: 600px; */
+  border-radius: 15px;
+  display: flex;
+  width: 100%;
+  height: 90px;
+  background-color: var(--color3);
+  cursor: pointer;
+}
+.HPDetail {
+  padding-block: 10px;
+}
+.HPDetail h1 {
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.HPDetail p {
+  font-size: 11px;
+  /* background-color: red; */
+  max-width: 350px;
+  opacity: 0.5;
+}
+Hp .HPBanner {
+  width: 90px;
+  height: 90px;
+  /* background-color: red; */
+}
+.HPBanner img {
+  padding: 10px;
+  border-radius: 15px;
+  width: 90px;
+  height: 100%;
+}

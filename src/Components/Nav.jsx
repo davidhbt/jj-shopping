@@ -19,7 +19,7 @@ function Nav() {
   const location = useLocation();
   const currentPath = location.pathname;
 
-  console.log(currentPath)
+  // console.log(currentPath, 'wsg')
 
 
   const highlightcss_div = {

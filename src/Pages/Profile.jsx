@@ -13,12 +13,6 @@ function Auth() {
   const navigate = useNavigate()
 
 
-  useEffect(() =>{
-    if(user == null){
-      navigate('/login')
-    }
-  })
-
   const handleSignout = async() =>{
     toast.success("Logged Out!")
     await signOut(Auth_cfg)
@@ -32,9 +26,9 @@ function Auth() {
          <div className="ProfileHeader">
                   <img src={userWEBP} alt="" className="ProfileHImg" />
                   <h1 className="ProfileHH1">
-                    Welcome Back<br /> <span style={{color: 'var(--color1)'}}>David</span>
+                    Welcome Back<br /> <span style={{color: 'var(--color1)'}}>{user?.displayName}</span>
                   </h1>
-                  <p className='AuthHP'>DavidHabte@gmail.com</p>      
+                  <p className='AuthHP'>{user?.email}</p>      
                 </div>
         <button className="Logoutbtn" onClick={handleSignout}>Logout</button>
       </div>

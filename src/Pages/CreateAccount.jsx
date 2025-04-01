@@ -18,11 +18,11 @@ function CreateAccount() {
   const navigate = useNavigate()
 
   const user = useContext(userState)
-  useEffect(() => {
-    if(user != null){
-        navigate('/profile')
-    }
-  },[])
+//   useEffect(() => {
+//     if(user != null){
+//         navigate('/profile')
+//     }
+//   },[])
 
   const handleCreateAccount = async () => {
     toast.info()
@@ -34,7 +34,7 @@ function CreateAccount() {
         displayName: name
       })
       toast.success('Success!')
-      navigate('/profile')
+      navigate('/')
       
     } catch (err) {
       // alert()

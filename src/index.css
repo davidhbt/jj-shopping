@@ -3,7 +3,8 @@
   --color2: #475368;
   --color3: #374051;
   --text-dim: #8C9097;
-  --main-font:  "Raleway", sans-serif;
+  /* --main-font:  "Raleway", sans-serif; */
+  --main-font: "Work Sans", sans-serif;
   --secondary-font:  "Work Sans", sans-serif;
   --toastify-text-color-light: white;
 }
@@ -15,11 +16,21 @@
   font-family: var(--main-font);
 }
 
+img{
+  /* display: none; */
+}
+
+body{
+  overflow-x: hidden;
+}
+
 .page{
   background-color: var(--color2);
   color: white;
   width: 100%;
   min-height: calc(100vh - 80px);
+  margin-bottom: 100px;
+
 
   /* min-height: calc(100vh - 80px); */
   /* max-height: calc(100vh - 80px); */
