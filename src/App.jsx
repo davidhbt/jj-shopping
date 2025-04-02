@@ -14,6 +14,7 @@ import { onAuthStateChanged } from 'firebase/auth'
 import { Auth_cfg } from './Config/Firebase.js'
 import { useLocation } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import Catagory from './Pages/Catagory.jsx'
 
 export const userState = createContext();
 
@@ -68,6 +69,7 @@ function App() {
       <Route path='/new' element={<CreateAccount/>} />
       <Route path='*' element={<NotFound/>} />
       <Route path='/profile' element={<Profile/>} />
+      <Route path='/catagory/:id' element={<Catagory/>} />
     </Routes>
     <Nav/>
     </userState.Provider>

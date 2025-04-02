@@ -1,17 +1,40 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Test from "./Test";
 import TelegramUserSDK from "./TelegramUserSDK";
 import { useContext } from "react";
 import { userState } from "../App";
 import AnimatedShop from "../assets/WebP/Shop.webp";
 import "./HomePage.css";
+import { db } from "../Config/Firebase";
+import { getDocs, collection } from "firebase/firestore";
+import { Link } from "react-router-dom";
 
 function HomePage() {
+  const [products, setProducts] = useState([]);
   const [transactionNo, setTransactionNo] = useState();
 
   const UserData = useContext(userState);
 
-  console.log(UserData);
+  const productref = collection(db, "Catagories");
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const snapshot = await getDocs(productref);
+        const productsList = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setProducts(productsList);
+        console.log(productsList);
+      } catch (error) {
+        console.error("Error fetching products: ", error);
+      }
+    };
+    fetchProducts();
+  }, []); // Adding an empty dependency array ensures this runs only once after the component mounts
+
+  // console.log(UserData);
 
   return (
     <div className="page">
@@ -24,39 +47,49 @@ function HomePage() {
         <div className="HPListing">
           <div className="HPItems">
             <h1>Items</h1>
-            <div className="HPItem">
-              <div className="HPBanner">
-                <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrs8rel7hFNfRkQmLTkCrl0tnVK6Q5Et4Tyw&s"
-                  alt="Watch"
-                />
-              </div>
-              <div className="HPDetail">
-                <h1>Watches</h1>
-                <p>
-                  Analog Watches, Digital Watches, SmartWatches.. we got it all
-                  with a discount..
-                </p>
-              </div>
-            </div>
+            {products.map((item) => {
+              if (item.is_product == true) {
+                return (
+                  <Link className="HPItem">
+                    <div className="HPBanner">
+                      <img
+                        src={item.photo_url}
+                        alt="Watch"
+                      />
+                    </div>
+                    <div className="HPDetail">
+                      <h1>{item.product_name}</h1>
+                      <p>
+                        {item.description}
+                      </p>
+                    </div>
+                  </Link>
+                );
+              }
+            })}
           </div>
           <div className="HPService">
             <h1>Services</h1>
-            <div className="HPItem">
-              <div className="HPBanner">
-                <img
-                  src="https://static1.xdaimages.com/wordpress/wp-content/uploads/2022/06/Telegram-Premium.jpg"
-                  alt="Telegram"
-                />
-              </div>
-              <div className="HPDetail">
-                <h1>Telegram Premium</h1>
-                <p>
-                  Analog Watches, Digital Watches, SmartWatches.. we got it all
-                  with a discount..
-                </p>
-              </div>
-            </div>
+            {products.map((item) => {
+              if (item.is_product == false) {
+                return (
+                  <div className="HPItem">
+                    <div className="HPBanner">
+                      <img
+                        src={item.photo_url}
+                        alt="Watch"
+                      />
+                    </div>
+                    <div className="HPDetail">
+                      <h1>{item.product_name}</h1>
+                      <p>
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                );
+              }
+            })}
           </div>
         </div>
       </div>
